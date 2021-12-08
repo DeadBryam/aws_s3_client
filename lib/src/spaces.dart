@@ -8,6 +8,7 @@ import 'bucket.dart';
 enum Provider {
   amazon,
   yandex,
+  digitalocean,
 }
 
 class Spaces extends Client {
@@ -35,6 +36,9 @@ class Spaces extends Client {
         break;
       case Provider.yandex:
         _endpointUrl = "https://storage.yandexcloud.net";
+        break;
+      case Provider.digitalocean:
+        _endpointUrl = "https://${region}.digitaloceanspaces.com";
         break;
       default:
         throw Exception(
